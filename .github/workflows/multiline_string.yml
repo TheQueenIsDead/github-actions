@@ -1,0 +1,27 @@
+name: "Parse Multiline String"
+
+on:
+  workflow_dispatch:
+    inputs:
+      multilineInput:
+        type: string
+        required: true
+  workflow_call:
+    inputs:
+      multilineInput:
+        type: string
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: "Parse"
+        run: |
+          cat ${{ inputs.multilineInput }} | while read line; do
+            echo "L: $line"; 
+          done
+
