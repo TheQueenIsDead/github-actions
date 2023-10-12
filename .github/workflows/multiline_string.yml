@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: "Parse"
         run: |
-          echo ${{ inputs.multilineInput }} | while read line; do
+          echo "${{ inputs.multilineInput }}" | while read line; do
             echo "L: $line"; 
           done
 
