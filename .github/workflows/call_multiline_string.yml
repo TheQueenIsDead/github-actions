@@ -1,0 +1,12 @@
+name: "Trigger Parse Multiline String"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ember:
+    uses: TheQueenIsDead/github-actions/.github/workflows/multiline_string.yml@main
+    with:
+      example: |
+        thisismy
+        multilinestr
